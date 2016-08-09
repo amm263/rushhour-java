@@ -3,8 +3,8 @@
 This program solves the Rush Hour board game.  
 Input can be submitted by console through the interactive (-i) option or through a file passed as program argument.  
 For example:  
-- rushhour.py -i   
-- rushhour.py *myboardfile*
+- rushhour -i   
+- rushhour *myboardfile*
 
 Any input file must contain a simple board formatted as:
 
