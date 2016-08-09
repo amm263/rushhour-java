@@ -118,6 +118,7 @@ public class RushhourJava {
                     }
                     
                 }
+                System.out.format("Won in "+model.getSolutionSize()+" steps!\n");
             }
         } else {
             System.out.format("No solution found");

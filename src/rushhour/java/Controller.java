@@ -1,7 +1,6 @@
 package rushhour.java;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import rushhour.java.Model.BoardTreeNode;
 
 public class Controller {
@@ -28,11 +27,12 @@ public class Controller {
         String[] newframe;
         char[] buffer;
         String newrow;
+        
         while (true) {
             curboardlist = (ArrayList<BoardTreeNode>) model.get_node(depth).clone();
             depth++;
             moved = false;
-            System.out.format("Depth:"+depth+"\n");
+            //System.out.format("Depth:"+depth+"\n");
             for (BoardTreeNode board : curboardlist) {
                 curframe = board.get_frame();
                 carlist = this.get_car_list(curframe);
@@ -56,6 +56,10 @@ public class Controller {
                                 this.model.append_frame(depth, newframe, board, car.carId, "Left");
                                 moved = true;
                             }
+                            /*System.out.format("Move car "+car.carId+" Left\n");
+                            for (String line : newframe) {
+                                System.out.format(line+"\n");
+                            }*/
                         }
                         //Move Right
                         if ((car.tail_y+car.size < model.cols()) && (curframe[car.tail_x].charAt(car.tail_y+car.size) == '.')) {
@@ -69,6 +73,10 @@ public class Controller {
                                 this.model.append_frame(depth, newframe, board, car.carId, "Right");
                                 moved = true;
                             }
+                            /*System.out.format("Move car "+car.carId+" Right\n");
+                            for (String line : newframe) {
+                                System.out.format(line+"\n");
+                            }*/
                         }
                     } else {
                         //Move Up
@@ -86,9 +94,13 @@ public class Controller {
                                 this.model.append_frame(depth, newframe, board, car.carId, "Up");
                                 moved = true;
                             }
+                            /*System.out.format("Move car "+car.carId+" Up\n");
+                            for (String line : newframe) {
+                                System.out.format(line+"\n");
+                            }*/
                         }
                         //Move Down
-                        if ((car.tail_x+car.size > model.rows()) && (curframe[car.tail_x+car.size].charAt(car.tail_y) == '.')) {
+                        if ((car.tail_x+car.size < model.rows()) && (curframe[car.tail_x+car.size].charAt(car.tail_y) == '.')) {
                             newframe = curframe.clone();
                             buffer = newframe[car.tail_x].toCharArray();
                             buffer[car.tail_y] = '.';
@@ -102,6 +114,10 @@ public class Controller {
                                 this.model.append_frame(depth, newframe, board, car.carId, "Down");
                                 moved = true;
                             }
+                            /*System.out.format("Move car "+car.carId+" Down\n");
+                            for (String line : newframe) {
+                                System.out.format(line+"\n");
+                            }*/
                         }
                         
                     }

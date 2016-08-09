@@ -64,7 +64,7 @@ public class Model {
     
     public void save_solution(BoardTreeNode board, int depth) {
         for (int x=depth; x>0; x--) {
-            this.solution.add("Move car"+board.carId+" "+board.direction); 
+            this.solution.add("Move car "+board.carId+" "+board.direction); 
             this.solution_frames.add(board.frame);
             board = board.parent;
         }

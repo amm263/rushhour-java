@@ -29,7 +29,4 @@ To always see the solution on console is recommended to use the verbose (-v) opt
 ##Notes
 The program should be quite flexible and should support rectangular or square boards of any size.
 
-##Warning
-Doesn't quite work yet. :)
-
 **Andrea Mazzotti - 2016**
