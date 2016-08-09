@@ -20,7 +20,7 @@ Any input file must contain a simple board formatted as:
 Alphabetic characters are reserved for cars.   
 `.` is reserved for the special red car. 
 
-<del>The solution to the problem is printed on console in interactive mode or saved to a file with the *.solved* extension.</del> Not implemented
+<del>The solution to the problem is printed on console in interactive mode or saved to a file with the *.solved* extension.</del> Not implemented  
 To always see the solution on console is recommended to use the verbose (-v) option.  
 
 ##Rules
